@@ -16,9 +16,11 @@ class _ScanPageState extends State<ScanPage> {
 
   late CameraController controller;
 
+
+
   @override
-  Future<void> initState() async {
-    await initCamera();
+  void initState() {
+    initCamera();
     super.initState();
     controller = CameraController(_cameras[0], ResolutionPreset.max);
     controller.initialize().then((_) {
